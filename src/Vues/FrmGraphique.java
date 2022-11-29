@@ -4,6 +4,7 @@ import Controlers.CtrlGraphique;
 import Entities.DatasGraph;
 import Tools.ConnexionBDD;
 import org.jfree.chart.*;
+import org.jfree.chart.axis.CategoryAxis;
 import org.jfree.chart.axis.CategoryLabelPositions;
 import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
 import org.jfree.chart.plot.CategoryPlot;
@@ -57,6 +58,9 @@ public class FrmGraphique extends JFrame{
                 false,false,false
         );
         graph = new ChartPanel(chart);
+        CategoryAxis axis = chart.getCategoryPlot().getDomainAxis();
+        axis.setCategoryLabelPositions(CategoryLabelPositions.UP_90);
+
         pnlGraph1.add(graph);
         pnlGraph1.validate();
 
